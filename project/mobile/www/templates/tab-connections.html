@@ -1,0 +1,9 @@
+<ion-view title="Connections">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="connection in connections" type="item-text-wrap" href="#/tab/connection/{{connection.id}}">
+        {{connection.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

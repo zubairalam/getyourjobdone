@@ -1,0 +1,285 @@
+// fluid container
+.container-fluid
+  padding 0
+
+//angular click
+[ng-click],
+[data-ng-click],
+[x-ng-click]
+  cursor pointer
+
+body
+  padding-left 0
+  padding-right 0
+  background $custom-white
+
+.slider
+  opacity 0.6
+
+.main-wrapper
+  margin-top 80px
+
+.content-box
+  background #fff
+  border-radius 12px
+  margin-bottom 20px
+  overflow hidden
+  padding 15px
+  box-shadow 0 5px 10px rgba(0,0,0,0.2)
+  p
+    line-height 2.2
+
+.horizontal-gradient
+  background #444
+  background rgba(0, 113, 197, 0.85)
+  border-bottom 3px solid #406B8D
+  /*background $custom-navbar-colour1*/
+  /*background -moz-linear-gradient(left, $custom-navbar-colour1 0%, $custom-navbar-colour2 100%)*/
+  /*background -webkit-gradient(linear, left top, right top, color-stop(0%, $custom-navbar-colour1), color-stop(100%, $custom-navbar-colour2))*/
+  /*background -webkit-linear-gradient(left, $custom-navbar-colour1 0%, $custom-navbar-colour2 100%)*/
+  /*background -o-linear-gradient(left, $custom-navbar-colour1 0%, $custom-navbar-colour2 100%)*/
+  /*background -ms-linear-gradient(left, $custom-navbar-colour1 0%, $custom-navbar-colour2 100%)*/
+  /*background linear-gradient(to right, $custom-navbar-colour1 0%, $custom-navbar-colour2 100%)*/
+  box-shadow 0 5px 10px rgba(0, 0, 0, 0.2)
+
+.list-group-item-inverse
+  box-shadow 0 5px 10px rgba(0, 0, 0, 0.2)
+
+.quote
+  top: 0
+  left -60px
+
+.quote-text
+  font-size 18px
+  font-weight 300
+
+.quote-author
+  margin-top 20px
+  font-weight normal
+  letter-spacing: 2px;
+  text-transform: capitalize;
+
+//header
+.header
+  position relative
+  padding 24px 0 0 0
+  height 200px
+  z-index 1000
+  background-position 0 -76px
+  h3
+    color #ebf3ff
+    font-size 28px
+  h4
+    color #c2d8ff
+    opacity 0.8
+  ul
+    position absolute
+    top 133px
+    margin 0
+    padding 0
+  li
+    float left
+    margin 0 5px
+    list-style none
+    font-size 14px
+    &:first-child
+      a
+        padding-left 0
+  a
+    display inline-block
+    padding 10px 20px
+    color #fff
+    font-weight bold
+  .heading-tile
+    background-position 0 -80px45b1e6
+
+//footer
+
+.footer
+  margin-top 30px
+  background #f3f3f3
+  color #666
+  dt
+    font-size 16px
+    margin-top 20px
+    margin-bottom 20px
+  dd
+    font-size 13px
+    padding-top 8px
+    line-height 1.8
+  .copyright
+    padding 10px
+    color $custom-grey
+    background #ebebeb
+
+
+// search box
+.top-search-box
+  width 350px
+
+.top-search-box-button
+  height 32px
+  width 62px
+
+.search
+  margin-top -45%
+  position absolute
+
+.search-caption
+  background rgba(52, 52, 52, 0.8)
+  margin-left 0
+  padding 0
+  color #fff
+
+input.input-search
+  margin-right 10px
+  padding-left 20px
+  padding-right 20px
+  height 50px
+  font-size 16px
+  background-color #fff
+  color #7d7d7d
+  width 100%
+
+button.button-search
+  height 50px
+  font-size 16px
+
+
+//margin-top -7px
+select.select-search
+  margin-right 10px
+  padding 13px 10px 13px 17px
+  height 50px
+  width 100%
+  font-size 16px
+  color #7d7d7d
+  line-height 43px
+  visibility visible !important
+
+.text-green
+  color $custom-green
+
+// map
+
+#map-canvas
+  position relative
+  width 100%
+  height 400px
+
+.angular-google-map-container
+  position absolute
+  top 0
+  bottom 0
+  right 0
+  left 0
+
+.search-col
+  display block
+
+.search-bar
+  visibility hidden
+  float right
+  padding 0 2px 0 8px
+  border none
+  border-radius 40px
+  background rgba(255, 255, 255, 0.3)
+  transition background ease-in-out 150ms
+
+.search-bar
+  &.active
+    background rgba(255, 255, 255, 0.7)
+  .search-icon
+    padding-top 4px
+    color white
+    i
+      padding-top 4px
+  input
+    padding-left 4px
+    width 200px
+    border none
+    background transparent
+    color white
+    font-size 14px
+    -webkit-appearance none
+    &:focus
+      outline none
+
+.search-bar.active .search-icon, .search-bar.active input
+  color $custom-blue
+
+.nano
+  position relative
+  width 100%
+  height 100%
+  .content
+    top 0
+    right 0
+    bottom 0
+    left 0
+    &:focus
+      outline thin dotted
+
+.no-list
+  list-style-type none
+  padding 15px 15px
+  margin 0
+
+.news
+  position absolute
+  bottom 0
+  padding-top 14px
+  width 100%
+  height 50px
+  background rgba(255, 255, 255, 0.2)
+  letter-spacing -0.03em
+  font-weight bold
+  .container
+    overflow hidden
+    color #e8e8e8
+    text-overflow ellipsis
+    white-space nowrap
+  a
+    padding 0
+    color #fff
+    text-decoration none
+    font-weight bold
+    opacity 0.85
+    &:hover
+      text-decoration underline
+      opacity 1
+    a
+      &:visited
+        color #fff
+  .news-col
+    overflow hidden
+    height 26px
+    text-overflow ellipsis
+    white-space nowrap
+
+#notification-badge
+  display none
+  position absolute
+  padding 3px 1px
+  border-radius 32px
+  border 2px solid #fff
+  width 21px
+  background $brand-danger
+  color #FFF
+  right 6px
+  top 15px
+  text-align center
+  z-index 1
+  font-size 11px
+  font-weight 700
+  line-height 11px
+
+#sidebar
+  &.affix-top
+    position static
+    margin-top 30px
+    width 228px
+  &.affix
+    position fixed
+    top 70px
+    width 228px

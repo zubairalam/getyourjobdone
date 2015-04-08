@@ -1,0 +1,74 @@
+
+  <div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" class="ng-scope"  flow-files-submitted="$flow.upload()" ng-controller="addCookieCtrl">
+  <div class="thumbnail" ng-show="!$flow.files.length">
+    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image">
+  </div>
+  <div class="thumbnail" ng-show="$flow.files.length" ng-model="photo" ng-init="photo=$flow.files[0]">
+    <img flow-img="$flow.files[0]">
+  </div>
+  <div>
+    <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn="">Select Logo</span>
+    <span class="btn btn-info" ng-show="$flow.files.length" flow-btn="">Change</span>
+    <span class="btn btn-danger" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+      Remove
+    </span>
+  </div>
+  <p class="vertical_space5px">
+    Only PNG,GIF,JPG,JEPG files allowed.
+  </p>
+  </div>
+
+
+<div>
+    
+    <div class="form-group">
+        <span>Name</span>
+        <input type="text" name="name" ng-model="formData.name" class="form-control" 
+            validation-min-length="3" 
+            validation-field-required="true"/>
+    </div>
+    
+    <div class="form-group">
+        <span>URL</span>
+        <input type="url" class="form-control"  name="website" ng-model="formData.website" 
+        validation-field-required="true"
+        validation-dynamically-defined="urlValidator">
+    </div>
+
+    <div class="form-group">
+        <span ng-show="!formData.details">Your Location: {{formData.location}}</span>
+        <span ng-show="formData.details">Your Location: {{formData.details.formatted_address}}</span>
+        <input type="text" class="form-control"  ng-autocomplete="formData.location" ng-model="formData.location" options="formData.options" details="formData.details"
+        validation-field-required="true"/>
+    </div>
+    
+    <div class="form-group">
+        <span>Company Type</span>
+        
+        <select ng-model="formData.companyType"  class="form-control">
+            <option ng-repeat="type in companyTypes" value="{{type}}">{{type}}</option>
+        </select>
+
+
+    </div>
+    
+    <div class="form-group">
+        <span>Company Size</span>
+        <select ng-model="formData.companySize" class="form-control">
+            <option ng-repeat="size in companySizes" value="{{size}}">{{size}}</option>
+        </select>
+    </div>
+    
+    <div class="form-group row">
+        <div class="col-xs-4 pull-left">
+            <a ui-sref="form.accountDetails" class="btn btn-default">
+                Next Section &#10093;
+            </a>
+        </div>
+        <div class="col-xs-4 pull-right">
+            <div class="spacer10"></div>
+            <a href="/dashboard" class="link">Skip To Dashboard &#187;</a>           
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,40 @@
+nav.navbar.navbar-default.navbar-fixed-top.horizontal-gradient(role='navigation')
+    .container
+        .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-ex1-collapse', ng-init='isCollapsed = true', ng-click='isCollapsed = !isCollapsed')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href='#{ url("home") }', rel='nofollow')
+                i.fa.fa-cloud-download
+                | &nbsp; JobPlus
+        #navbar-ex1-collapse.collapse.navbar-collapse(ng-class='{collapse: isCollapsed}')
+            ul.nav.navbar-nav.navbar-left
+                li: a(href='#')
+                    i.i-briefcase-2
+                    |&nbsp; Jobs
+                li: a(href='#')
+                    i.i-office
+                    | &nbsp; Companies
+                li: a(href='#')
+                    i.i-users-5
+                    | &nbsp; People
+                li: a(href='#')
+                    i.i-cart
+                    | &nbsp; Marketplace
+
+            .col-sm-3.col-md-3.pull-left
+                form.navbar-form(role='search')
+                    .input-group
+                        input#query.form-control.top-search-box(type='text', placeholder='Search Jobs, Companies, People..', name='query', style='width:200px')
+                        .input-group-btn
+                            button.btn.btn-success.top-search-box-button(type='submit')
+                                i.icon16.i-search-3
+
+            ul.nav.navbar-nav.navbar-right
+                li: a(href='#{ url("signup") }') Sign Up
+                li: a(href='#{ url("login") }') Login
+                li
+                    form(action='#{ url("signup") }')
+                        button.btn.btn-success.navbar-btn Post a Job

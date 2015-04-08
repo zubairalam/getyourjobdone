@@ -1,0 +1,13 @@
+extend ./base
+block breadcrumbs
+    include ./partials/breadcrumb
+block content
+    .container
+        .row
+            .col-md-12.col-sm-12
+                .content-box
+                    h1.text-green #{title}
+                    hr
+                    h4 Our code monkey tells us that we cannot find the page you're looking for.
+                    h4 Please make sure you've got the right link.
+                  

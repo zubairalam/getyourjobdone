@@ -1,0 +1,53 @@
+extend ../base
+block scripts
+    script(src='/vendor/angular/angular.min.js')
+    script(src='/vendor/angular-messages/angular-messages.min.js')
+    script(src='/vendor/angular-cookies/angular-cookies.min.js')
+    script(src='/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js')
+    script(src='/js/login.js')
+block breadcrumbs
+    include ../partials/breadcrumb
+block header
+    include ../partials/navbar
+block footer
+    include ../partials/footer_nav
+    include ../partials/copyright
+block content
+    .container
+        .row
+            .col-md-6.col-sm-6
+                .content-box
+                    h1.text-green Login
+                    hr
+                    div(ng-controller='LoginController as login')
+                        alert.col-sm-12.col-md-12(ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)") {{alert.msg}}
+                        form.form-horizontal(name='loginForm', ng-submit='login.submit(loginForm.$valid)', novalidate)
+                            .form-group(ng-class='{ "has-error" : loginForm.email.$invalid && !loginForm.email.$pristine }')
+                                .col-sm-12.col-md-12
+                                    input.form-control(type='email', name="email", placeholder='Email Address', ng-model='login.user.email', required)
+                                    div(ng-if='loginForm.email.$invalid && !loginForm.email.$pristine', ng-messages='loginForm.email.$error', ng-messages-include='html/messages.html')
+                                    .form-group(ng-class='{ "has-error" : loginForm.firstName.$invalid && !loginForm.firstName.$pristine }')
+                                .col-sm-12.col-md-12
+                                    input.form-control(type='password', name="password", placeholder='Password', ng-model='login.user.password', ng-minlength=3, required)
+                                    div(ng-if='loginForm.password.$invalid && !loginForm.password.$pristine', ng-messages='loginForm.password.$error', ng-messages-include='html/messages.html')
+                                    div(ng-password-strength='login.user.password')
+                                    .form-group
+                                .col-sm-12.col-md-12
+                                    a.forget(href='#{ url("forgot") }') Forgot your password?
+                                    .form-group
+                                .col-sm-5.col-md-5.col-offset-4.col-sm-offset-4.col-sm-5.col-md-5.col-offset-4.col-sm-offset-4
+                                    button.btn.btn-primary.btn-lg(type='submit', ng-disabled='loginForm.$invalid') Login
+                     p.text-info
+                        | Don't have an account?
+                        | &nbsp;
+                        a(href='#{ url("signup") }') Sign up
+            .col-md-6.col-sm-6
+                .content-box
+                    .media
+                        a.media-left(href='#')
+                            img(alt='Marie_50x50', src='http://lorempixel.com/output/people-q-c-80-80-1.jpg')
+                        .media-body
+                            h4.media-heading Outstanding Service!
+                            p "JobPlus provides us all the necessary tools for simplifying our recruitment process. Well done!"
+                        .quote-author
+                            .quote-author-name Marie Currie, Ebene, Mauritius

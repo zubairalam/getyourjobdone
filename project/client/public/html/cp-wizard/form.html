@@ -1,0 +1,24 @@
+<div class="row reg_wrap">
+<div class="col-sm-10 col-sm-offset-1">
+
+  <div id="form-container">
+  
+      <div class="text-center">
+          <h2>Let's Be Friends</h2>
+            <div class="steps flat">
+                <a ui-sref-active="active" ui-sref=".profile">Profile</a>
+                <a ui-sref-active="active" ui-sref=".accountDetails">Account Details</a>
+            </div>
+      </div>
+      
+      <!-- use ng-submit to catch the form submission and use our Angular function -->
+      <form id="signup-form" name="profileForm" ng-submit="processForm()" novalidate>
+          <!-- our nested state views will be injected here -->
+          <div id="form-views" ui-view></div>
+      </form>
+
+</div>
+</div>
+
+
+

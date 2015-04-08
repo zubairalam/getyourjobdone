@@ -1,0 +1,19 @@
+{
+  "name": "jobplus",
+  "version": "0.0.1",
+  "authors": [
+    "firethoughts Ltd"
+  ],
+  "description": "front-end",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-admin": "~0.2.5"
+  }
+}

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+{% block head%}
+	{% parent %}
+
+
+	<link rel="stylesheet" type="text/css" href="/css/search.css">
+
+
+	<script type="text/javascript" src="/js/search-recipes.js"></script>
+	<script type="text/javascript" src="/vendor/elasticsearch/elasticsearch.angular.js"></script>
+
+
+{% endblock%}
+
+
+{% block content %}
+<div ng-controller="recipeCtrl">
+	<div class="container">
+		<div class="row">
+           <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                	<form ng-submit="getNextRecipes()">
+                		<input type="text" ng-model="searchTerms" class="search-query form-control" placeholder="Search" />
+                		<span class="input-group-btn">
+                		    <button class="btn btn-danger" type="submit">
+                		        <span class="glyphicon glyphicon-search"></span>
+                		    </button>
+                		</span>
+                	</form>                    
+                </div>
+            </div>
+		</div>
+	</div>
+
+	<div class="container">
+        {% raw %}
+		<div class="row">
+			<div class="col-md-12">
+			    <div ng-repeat="recipe in recipes track by $index">
+			    	{{recipe}}
+			    </div>
+			</div>
+		</div>
+        <div class="row">
+            <!-- 
+                show buttons based on total results matched, if greater than ten batches of 20 results then show only first 10 buttons
+            -->
+            <div class="table">
+                <ul id="horizontal-list">
+                    <li ng-repeat="n in [] | range: totalPages">
+                        <a class="btn btn-default" ng-click=getPage(n)>{{n}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% endraw %}
+	</div>
+</div>
+	
+{% endblock %}

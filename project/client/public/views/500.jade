@@ -1,0 +1,12 @@
+extend ./base
+block breadcrumbs
+    include ./partials/breadcrumb
+block content
+    .container
+        .row
+            .col-md-12.col-sm-12
+                .content-box
+                    h1.text-green #{title}
+                    hr
+                    h4 Our code monkey tells us that there's an error on our end.
+                    h4 Our sincere apologies. Please try again in few minutes.

@@ -1,0 +1,35 @@
+{
+  "name": "jobplus",
+  "version": "0.0.1",
+  "description": "front-end",
+  "main": "index.js",
+  "author": "firethoughts Ltd",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@code.firethoughts.com:devs/jobplus.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.0",
+    "jade": "^1.7.0",
+    "node-rest-client": "^1.4.1",
+    "node-uuid": "^1.4.1",
+    "serve-favicon": "^2.1.6",
+    "stylus": "^0.49.3",
+    "swig": "^1.4.2",
+    "underscore": "^1.7.0",
+    "underscore.string": "^2.4.0",
+    "urls": "0.0.4"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-dev-update": "^1.0.1",
+    "grunt-jsonlint": "^1.0.4",
+    "grunt-nodemon": "^0.3.0",
+    "grunt-shell": "^1.1.1",
+    "load-grunt-tasks": "^1.0.0",
+    "morgan": "^1.4.1"
+  }
+}

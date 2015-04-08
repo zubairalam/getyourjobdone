@@ -1,0 +1,91 @@
+.col-sm-3.col-md-3#sidebar
+    .panel-group
+        .panel.panel-default
+            .panel-heading.text-center
+                img.img-circle(src='https://www.linkedin.com/mpr/pub/image-wU35Zaij3n5ckFj-Dma_5A1XC4B2Ol2lSUT0o6KxCuWhXxvSwU30eH2jCOfTXS-1Ivn1/elizabeth-higgins.jpg')
+                h4 Elizabeth Higgins
+                h5 Art Director
+                img.img-circle(src = '../img/verified.jpg')
+                h6
+                    a(href='#') Edit My Profile
+                h6 Basic Account &nbsp;(
+                    a(href='#') Upgrade?
+                    | )
+            ul.list-group(ng-controller='SidebarJobApplicationController')
+                li.list-group-item.list-group-item-inverse.text-center(ng-click='isCollapsed = !isCollapsed')
+                    h5.text-green
+                        i.pull-right(ng-class="isCollapsed ? 'fa fa-caret-right' : 'fa fa-caret-down'")
+                        i.fa.fa-binoculars
+                        | &nbsp; My Career &nbsp;
+                div(collapse="isCollapsed")
+                    li.list-group-item.active
+                        i.fa.fa-pencil-square-o
+                        | &nbsp; All
+                        span.badge 25
+                    li.list-group-item
+                        i.fa.fa-file
+                        | &nbsp; Shortlisted
+                        span.badge 5
+                    li.list-group-item
+                        i.fa.fa-comment
+                        | &nbsp; Interviews
+                        span.badge 2
+                    li.list-group-item
+                        i.fa.fa-flash
+                        | &nbsp; Offers
+                        span.badge 3
+                    li.list-group-item
+                        i.fa.fa-file
+                        | &nbsp; Saved
+                        span.badge 9
+                    li.list-group-item
+                        i.fa.fa-hand-o-right
+                        | &nbsp; Recommended
+                        span.badge 93
+            ul.list-group(ng-controller='SidebarJobAdvertController')
+                li.list-group-item.list-group-item-inverse.text-center(ng-click='isCollapsed = !isCollapsed')
+                    h5.text-green
+                        i.pull-right(ng-class="isCollapsed ? 'fa fa-caret-right' : 'fa fa-caret-down'")
+                        i.fa.fa-newspaper-o
+                        | &nbsp; My Job Ads &nbsp;
+                div(collapse="isCollapsed")
+                    li.list-group-item
+                        i.fa.fa-pencil-square-o
+                        | &nbsp; All
+                        span.badge 25
+                    li.list-group-item
+                        i.fa.fa-file
+                        | &nbsp; Shortlisted
+                        span.badge 5
+                    li.list-group-item
+                        i.fa.fa-comment
+                        | &nbsp; Interviews
+                        span.badge 2
+                    li.list-group-item
+                        i.fa.fa-flash
+                        | &nbsp; Offers
+                        span.badge 3
+            ul.list-group(ng-controller='SidebarJobServiceController')
+                li.list-group-item.list-group-item-inverse.text-center(ng-click='isCollapsed = !isCollapsed')
+                    h5.text-green
+                        i.pull-right(ng-class="isCollapsed ? 'fa fa-caret-right' : 'fa fa-caret-down'")
+                        i.fa.fa-shopping-cart
+                        | &nbsp; My Marketplace &nbsp;
+
+                div(collapse="isCollapsed")
+                    li.list-group-item
+                        i.fa.fa-pencil-square-o
+                        | &nbsp; Selling
+                        span.badge 25
+                    li.list-group-item
+                        i.fa.fa-file
+                        | &nbsp; Sold
+                        span.badge 5
+                    li.list-group-item
+                        i.fa.fa-comment
+                        | &nbsp; In Progress
+                        span.badge 2
+                    li.list-group-item
+                        i.fa.fa-flash
+                        | &nbsp; Offers
+                        span.badge 3

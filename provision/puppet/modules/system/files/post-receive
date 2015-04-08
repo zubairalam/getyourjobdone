@@ -1,0 +1,3 @@
+#!/bin/sh
+GIT_WORK_TREE=/var/www/www.jobplus.mu git checkout -f
+chown -R www-data:www-data /var/www/www.jobplus.mu && chgrp -R www-data /var/www/www.jobplus.mu && chmod -R g+w /var/www/www.jobplus.mu && find /var/www/www.jobplus.mu -type d -exec chmod g+s {} \;

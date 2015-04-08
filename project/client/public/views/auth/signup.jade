@@ -1,0 +1,78 @@
+extend ../base
+block scripts
+    script(src='/vendor/angular/angular.min.js')
+    script(src='/vendor/angular-messages/angular-messages.min.js')
+    script(src='/vendor/angular-cookies/angular-cookies.min.js')
+    script(src='/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js')
+    script(src='/js/signup.js')
+block breadcrumbs
+    include ../partials/breadcrumb
+block header
+    include ../partials/navbar
+block footer
+    include ../partials/footer_nav
+    include ../partials/copyright
+block content
+    .container
+        .row
+            .col-md-6.col-sm-6
+                .content-box
+                    h1.text-green Sign up
+                    hr
+                    h5 Join thousands of jobseekers, recruiters, freelancers and businesses. What are you waiting for?
+                    h5  It's completely
+                        strong
+                            | &nbsp;FREE
+                    div(ng-controller='RegistrationController as registration')
+                        alert.col-sm-12.col-md-12(ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)") {{alert.msg}}
+                        form.form-horizontal(name='registrationForm', ng-submit='registration.submit(registrationForm.$valid)', novalidate)
+                            .form-group(ng-class='{ "has-error" : registrationForm.accountType.$invalid && !registrationForm.accountType.$pristine }')
+                                .col-sm-5.col-md-5
+                                    label.radio.control-label.pull-left What best describes you?
+                                .col-sm-7.col-md-7
+                                    label.radio-inline.pull-left
+                                        input(type='radio', name='accountType', value='individual', ng-model='registration.user.accountType', ng-required='!registration.user.accountType')
+                                        | Individual
+                                    label.radio-inline.pull-left
+                                        input(type='radio', name='accountType', value='business', ng-model='registration.user.accountType', ng-required='!registration.user.accountType')
+                                        | Business
+                                        .col-sm-2(ng-if='registrationForm.accountType.$invalid && !registrationForm.accountType.$pristine', ng-messages='registrationForm.accountType.$error', ng-messages-include='html/messages.html')
+
+
+                            .form-group(ng-class='{ "has-error" : registrationForm.email.$invalid && !registrationForm.email.$pristine }')
+                                .col-sm-12.col-md-12
+                                    input.form-control(type='email', name="email", placeholder='Email Address', ng-model='registration.user.email', required)
+                                    div(ng-if='registrationForm.email.$invalid && !registrationForm.email.$pristine', ng-messages='registrationForm.email.$error', ng-messages-include='html/messages.html')
+
+                            .form-group(ng-class='{ "has-error" : registrationForm.firstName.$invalid && !registrationForm.firstName.$pristine }')
+                                .col-sm-12.col-md-12
+                                    input.form-control(type='text', name="firstName", placeholder='First Name', ng-model='registration.user.firstName', ng-minlength=2, ng-pattern="/^[a-zA-Z_ ]*$/", required)
+                                    div(ng-if='registrationForm.firstName.$invalid && !registrationForm.firstName.$pristine', ng-messages='registrationForm.firstName.$error', ng-messages-include='html/messages.html')
+
+                            .form-group(ng-class='{ "has-error" : registrationForm.lastName.$invalid && !registrationForm.lastName.$pristine }')
+                                .col-sm-12.col-md-12
+                                    input.form-control(type='text', name="lastName", placeholder='Last Name', ng-model='registration.user.lastName', ng-minlength=2, ng-pattern="/^[a-zA-Z_ ]*$/", required)
+                                    div(ng-if='registrationForm.lastName.$invalid && !registrationForm.lastName.$pristine', ng-messages='registrationForm.lastName.$error', ng-messages-include='html/messages.html')
+
+                            .form-group(ng-class='{ "has-error" : registrationForm.password.$invalid && !registrationForm.password.$pristine }')
+                                .col-sm-12.col-md-12
+                                    input.form-control(type='password', name="password", placeholder='Password', ng-model='registration.user.password', ng-minlength=3, required)
+                                    div(ng-if='registrationForm.password.$invalid && !registrationForm.password.$pristine', ng-messages='registrationForm.password.$error', ng-messages-include='html/messages.html')
+                                    div(ng-password-strength='registration.user.password')
+
+                            .form-group(ng-class='{ "has-error" : registrationForm.confirmPassword.$invalid && !registrationForm.confirmPassword.$pristine }')
+                                .col-sm-12.col-md-12
+                                    input.form-control(type='password', name='confirmPassword', placeholder='Confirm Password', ng-model='registration.user.confirmPassword', compare-to='registration.user.password', required)
+                                    div(ng-if='registrationForm.confirmPassword.$invalid && !registrationForm.confirmPassword.$pristine', ng-messages='registrationForm.confirmPassword.$error', ng-messages-include='html/messages.html')
+
+                            .form-group
+                                .col-sm-5.col-md-5.col-offset-4.col-sm-offset-4
+                                    button.btn.btn-primary.btn-lg(type='submit', ng-disabled='registrationForm.$invalid') Sign Up
+            .col-md-6.col-sm-6
+                .content-box
+                    .quote
+                        .quote-text
+                            | "JobPlus provides us all the necessary tools for simplifying our recruitment process. Well done!"
+                        .quote-author
+                            img.quote-author-photo(alt='Marie_50x50', src='http://lorempixel.com/output/people-q-c-80-80-1.jpg')
+                            .quote-author-name Marie Currie, Ebene, Mauritius

@@ -1,0 +1,14 @@
+{
+  "name": "jobplus",
+  "version": "0.0.1",
+  "authors": [
+    "firethoughts Ltd"
+  ],
+  "description": "front-end",
+  "license": "MIT",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.13",
+    "ng-cordova": "~0.0.3"
+  }
+}

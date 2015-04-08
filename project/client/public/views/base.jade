@@ -1,0 +1,23 @@
+doctype html
+html(ng-app='mainApp')
+    head
+        meta(charset='utf-8')
+        title #{title} - JobPlus
+        meta(name='description', content='#{title}')
+        link(rel='stylesheet', href='/css/icomoon.css')
+        link(rel='stylesheet', href='/vendor/fontawesome/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/css/style.css')
+        block stylesheets
+        block scripts
+    body
+        block notifications
+        header
+            block header
+        .main-wrapper
+            block breadcrumbs
+            block content
+        footer.footer
+            block footer
+            block footer_scripts
+
+

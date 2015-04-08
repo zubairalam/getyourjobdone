@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block head%}
+	{% parent %}
+
+    <link rel="stylesheet" type="text/css" href="/css/search.css">
+
+    
+    <script type='text/javascript' src='/vendor/ngInfiniteScroll/build/ng-infinite-scroll.js'></script>
+	<script type="text/javascript" src="/vendor/elasticsearch/elasticsearch.angular.js"></script>
+    <script type="text/javascript" src="/js/infinitePaginate.js"></script>
+
+{% endblock%}
+
+
+{% block content %}
+<div ng-controller="recipeCtrl">
+    <div class="container">
+        <div class="row">
+           <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <form ng-submit="getNextRecipes()">
+                        <input type="text" ng-model="searchTerms" class="search-query form-control" placeholder="Search" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% raw %}
+            <div class="col-md-12" infinite-scroll='getNextRecipes()' infinite-scroll-distance='1'>
+                <div ng-repeat="recipe in recipes track by $index">
+                    {{recipe}}
+                </div>
+                <div ng-show='busy'>Loading data...</div>
+            </div>
+            {% endraw %}
+        </div>
+    </div>
+</div>
+{% endblock %}
