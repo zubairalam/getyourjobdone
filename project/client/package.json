@@ -1,5 +1,5 @@
 {
-  "name": "jobplus",
+  "name": "firethoughts",
   "version": "0.0.1",
   "description": "front-end",
   "main": "index.js",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@code.firethoughts.com:devs/jobplus.git"
+    "url": "git@code.firethoughts.com:devs/firethoughts.git"
   },
   "dependencies": {
     "body-parser": "^1.9.2",

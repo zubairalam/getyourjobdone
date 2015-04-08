@@ -1,11 +1,11 @@
-JobPlus Client Project
+firethoughts Client Project
 ======================
 
 Authors     :   [firethoughts Ltd] (http://www.firethoughts.com/)
 
 Version     :   0.0.1
 
-Description :   The Client Frontend for JobPlus
+Description :   The Client Frontend for firethoughts
 
 License     :   MIT
 

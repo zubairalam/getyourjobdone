@@ -1,11 +1,11 @@
 {
-  "name": "jobplus",
+  "name": "firethoughts",
   "version": "0.0.1",
-  "description": "The API Server Backend for JobPlus",
+  "description": "The API Server Backend for firethoughts",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@code.firethoughts.com:devs/jobplus.git"
+    "url": "git@code.firethoughts.com:devs/firethoughts.git"
   },
   "author": "firethoughts Ltd",
   "license": "MIT",

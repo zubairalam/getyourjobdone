@@ -37,7 +37,7 @@ exports.customRoutes = (function () {
     });
 
     router.get('/', function (req, res) {
-        res.json({message: 'Welcome to JobPlus API!'});
+        res.json({message: 'Welcome to firethoughts API!'});
     });
 
     router.use(require('./auth'));

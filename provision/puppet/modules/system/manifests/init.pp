@@ -68,7 +68,7 @@ class system {
     require => File["/home/firethoughts"]
   }
 
-  file { "/var/www/www.jobplus.mu":
+  file { "/var/www/www.firethoughts.mu":
     ensure  => "directory",
     require => File["/var/www/"]
   }
@@ -78,7 +78,7 @@ class system {
     owner   => "firethoughts",
     group   => "firethoughts",
     mode    => 755,
-    require => File["/var/www/www.jobplus.mu"]
+    require => File["/var/www/www.firethoughts.mu"]
   }
 
   exec { "initialize-website-git":

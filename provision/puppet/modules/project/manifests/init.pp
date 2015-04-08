@@ -1,7 +1,7 @@
 class project {
 
   exec { "project-permissions":
-     command => "chown -R www-data: /var/www && chown -R www-data: /var/www/www.jobplus.mu",
+     command => "chown -R www-data: /var/www && chown -R www-data: /var/www/www.firethoughts.mu",
      require => Class["nodejs"]
   }
 

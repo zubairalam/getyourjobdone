@@ -1,6 +1,6 @@
 VM_MEMORY = "1024"
 VM_CPU = 1
-VM_NAME = "jobplus"
+VM_NAME = "firethoughts"
 VAGRANT_COMMAND = ARGV[0]
 
 Vagrant.require_version ">=1.6.0"
@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
         provision.manifest_file = "site.pp"
         provision.module_path = "provision/puppet/modules"
     end
-    config.vm.synced_folder "project/", "/var/www/www.jobplus.mu", owner:"www-data", group: "www-data"
+    config.vm.synced_folder "project/", "/var/www/www.firethoughts.mu", owner:"www-data", group: "www-data"
     #config.vm.synced_folder "project/client/", "/var/www", owner:"www-data", group:"www-data"
 
     config.vm.define "local", primary: true do |local|

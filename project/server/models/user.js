@@ -184,7 +184,7 @@ schema.pre("save", function (next) {
     var mailOptions = {
         from: 'firethoughts Developers <developers@firethoughts.com>',
         to: this.email,
-        subject: 'Welcome to JobPlus, {0}'.format(this.firstName),
+        subject: 'Welcome to firethoughts, {0}'.format(this.firstName),
         text: 'Hello {0}'.format(this.fullName),
         html: '<b>Hello {0}, please visit this <a href="http://localhost:3000/verify-email/{1}">this</a> link to verify your email id.</b>'.format(this.fullName, this.token)
     };
@@ -201,7 +201,7 @@ schema.methods.sendEmailVerification = function () {
     var mailOptions = {
         from: 'firethoughts Developers <developers@firethoughts.com>',
         to: this.email,
-        subject: 'Welcome to JobPlus, {0}'.format(this.firstName),
+        subject: 'Welcome to firethoughts, {0}'.format(this.firstName),
         text: 'Hello {0}'.format(this.fullName),
         html: '<b>Hello {0}, please visit this <a href="http://localhost:3000/verify-email/{1}">this</a> link to verify your email id.</b>'.format(this.fullName, this.token)
     };

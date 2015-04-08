@@ -1,4 +1,4 @@
-node "jobplus" {
+node "firethoughts" {
 
   user { root:
     ensure   => present,

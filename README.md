@@ -1,4 +1,4 @@
-JobPlus Project
+firethoughts Project
 ===============
 
 Authors     :   [firethoughts Ltd] (http://www.firethoughts.com/)
@@ -36,8 +36,8 @@ Cloning the Project Repository
 
 You can get the code in two ways via the [Code Repo] (http://code.firethoughts.com/).
 
-> -  **(SSH Mode) git clone git@code.firethoughts.com:devs/jobplus.git**
-> -  **(HTTP Mode) git clone http://code.firethoughts.com/devs/jobplus.git**
+> -  **(SSH Mode) git clone git@code.firethoughts.com:devs/firethoughts.git**
+> -  **(HTTP Mode) git clone http://code.firethoughts.com/devs/firethoughts.git**
 
 Running the Project
 -------------------

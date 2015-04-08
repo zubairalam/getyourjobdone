@@ -1,11 +1,11 @@
-JobPlus Server Project
+firethoughts Server Project
 ======================
 
 Authors     :   [firethoughts Ltd] (http://www.firethoughts.com/)
 
 Version     :   0.0.1
 
-Description :   The API Server Backend for JobPlus
+Description :   The API Server Backend for firethoughts
 
 License     :   MIT
 

@@ -8,7 +8,7 @@ from fabric.state import env
 from StringIO import StringIO
 
 home_path = '/home/firethoughts/'
-www_path = '/var/www/www.jobplus.mu'
+www_path = '/var/www/www.firethoughts.mu'
 
 
 @task
@@ -28,7 +28,7 @@ def production():
     """
     env.run = run
     env.sudo = sudo
-    env.hosts = ['www.jobplus.mu']
+    env.hosts = ['www.firethoughts.mu']
 
 
 @task

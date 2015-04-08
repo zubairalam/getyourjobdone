@@ -1,12 +1,12 @@
 {
-  "name": "jobplus",
+  "name": "firethoughts",
   "version": "0.0.1",
   "authors": [
     "firethoughts Ltd"
   ],
   "description": "front-end",
   "license": "MIT",
-  "description": "jobplus mobile app",
+  "description": "firethoughts mobile app",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",
