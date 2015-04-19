@@ -44,6 +44,8 @@ node "firethoughts" {
 
   include core
   include system
+  include postgresql
+  include python
   include elasticsearch
   include redis
   include nginx
