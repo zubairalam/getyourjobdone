@@ -1,0 +1,65 @@
+[
+    {
+        "pk": 1,
+        "model": "core.language",
+        "fields": {
+
+            "slug": "english",
+            "name": "English"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "core.language",
+        "fields": {
+
+            "slug": "french",
+            "name": "French"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "core.language",
+        "fields": {
+
+            "slug": "creole",
+            "name": "Creole"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "core.language",
+        "fields": {
+
+            "slug": "hindi",
+            "name": "Hindi"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "core.language",
+        "fields": {
+
+            "slug": "urdu",
+            "name": "Urdu"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "core.language",
+        "fields": {
+
+            "slug": "mandarin",
+            "name": "Mandarin"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "core.language",
+        "fields": {
+
+            "slug": "tamil",
+            "name": "Tamil"
+        }
+    }
+]

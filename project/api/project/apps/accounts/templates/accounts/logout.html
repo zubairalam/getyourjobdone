@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+<title>{% trans 'You are now signed out' %} | {{ site.name }}</title>
+<meta name="description" content="{% trans 'You are now signed out' %}"/>
+<meta name="robots" content="index, follow"/>
+<link rel="author" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+<link rel="publisher" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row breadcrumb-title">
+        <div class="breadcrumbs pull-left">
+            <ul class="breadcrumb">
+                {% trans 'You are here' %}:
+                <li>
+                    <a href="{% url 'core:home' %}">
+                        {% trans 'Home' %}
+                    </a>
+                    &nbsp;<i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">
+                    {% trans 'Sign Out' %}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sx-12 col-sm-12">
+            <h1>{% trans 'Sign out' %}</h1>
+
+            <p>{% trans 'We have now signed you out of your account.' %}</p>
+
+            <p>
+                {% trans 'If this was made in error, please' %}
+                &nbsp;<a href="{% url 'accounts:login' %}">{% trans 'sign in' %}</a>
+                &nbsp;{% trans 'again' %}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

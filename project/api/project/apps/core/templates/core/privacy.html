@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+<title>{% trans 'Privacy Policy' %}: | {{ site.name }}</title>
+<meta name="description" content="{% trans 'Privacy Policy' %} {{ site.name}}"/>
+<meta name="robots" content="index, follow"/>
+<link rel="author" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+<link rel="publisher" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="row breadcrumb-title">
+        <div class="breadcrumbs pull-left">
+            <ul class="breadcrumb">
+                {% trans 'You are here' %}:
+                <li>
+                    <a href="{% url 'core:home' %}">
+                        {% trans 'Home' %}
+                    </a>
+                    &nbsp;<i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">
+                    {% trans 'Privacy Policy' %}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sx-12 col-sm-12">
+            <div class="well">
+                <h1>
+                    {% trans 'Privacy and Cookies' %}
+                </h1>
+
+                <p>
+                    This website uses cookies. A cookie is a small file of letters and numbers that we put on your
+                    computer.
+                    Cookies contain information that is transferred to your computer's hard drive. Each cookie expires
+                    after
+                    a
+                    certain period of time depending on what we use it for. These cookies allow us to distinguish you
+                    from
+                    other users, helps
+                    us to provide you with a good experience when you use our website and also allow us to make
+                    improvements. Below we
+                    describe the varioustypes of cookies we use on our site.
+                </p>
+
+                <p>
+                    By using our website, you expressly consent to the use of cookies as described on this page as well
+                    as
+                    in
+                    our <a href="#">Privacy Statement.</a>
+                </p>
+
+                <p><strong>Cookies used on our site</strong></p>
+
+                <p>
+                    "Strictly Necessary" cookies let you move around the website and use essential features. We can't
+                    provide
+                    you the website services without these cookies. These cookies do not collect information about you
+                    that
+                    could be used for remembering where you've been on the internet outside of the website.
+                </p>
+
+                <p>
+                    We use these Strictly Necessary cookies to do things like remember information when you navigate to
+                    different pages during a web browser session, identify you as being logged in to our website, make
+                    sure
+                    we deliver the right information to one of your requests and direct you to specific applications or
+                    specific servers.
+                </p>
+
+                <p>
+                    <strong>Performance</strong>
+                </p>
+
+                <p>
+                    "Performance" cookies collect information about how you use our website related to analytics. These
+                    cookies do not collect any information that could identify you and are only used to help us improve
+                    the
+                    website.
+                </p>
+
+                <p>
+                    Performance cookies are managed for us by a third party. We don't allow the third party to use the
+                    cookies for any purpose other than those listed above. Specifically, we use Google Analytics to
+                    collect
+                    information about how people use this website. Google Analytics stores information such as what
+                    pages
+                    you visit, how long you are on the site, how you got here, what you click on and where you visit us
+                    from. We do not allow Google to use or share our analytics data. You can install a Google Analytics
+                    browser "plug in" to prevent the website sending information about your visit to Google Analytics.
+                    Please go to <a href="http://www.google.com/analytics/learn/privacy.html">Google Analytics &
+                    Privacy</a>
+                    tofind out how.
+                </p>
+
+                <p><strong>Functionality</strong></p>
+
+                <p>
+                    "Functionality" cookies are used to remember data and to improve your visit. We use Functionality
+                    cookies
+                    to do things such as remembering the language you want to use the site in and similar functionality.
+                </p>
+
+                <p><strong>Targeting</strong></p>
+
+                <p>"Targeting" cookies are for to services provided by third parties, such as 'Like' buttons and 'Share'
+                    buttons. Third parties provide these services in return for recognizing that you have visited our
+                    website.
+                </p>
+
+                <p>We use Targeting cookies to link to social networks such as Facebook and Twitter. These sites may use
+                    information about your visit to target advertising to you on other websites.</p>
+
+                <p><strong>General Info About Cookies</strong></p>
+
+                <p>
+                    You can remove or disable cookies via your browser at any time. Please refer to your browser's
+                    configuration documentation for the steps you need to take to remove or disable cookies. Accepting
+                    cookies is a condition of using the website, so if you remove or disable them we cannot guarantee
+                    how
+                    our website will perform for you.
+                </p>
+
+                <p>
+                    Some cookie names vary depending on the user. Also, some of these cookies may not be used when you
+                    use
+                    our site.
+                </p>
+
+                <p>
+                    We recommend you take a look at <a
+                        href="http://www.allaboutcookies.org/">www.allaboutcookies.org</a> to
+                    find out more about cookies, methods of seeing what cookies are set in your browser and methods of
+                    deleting cookies.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

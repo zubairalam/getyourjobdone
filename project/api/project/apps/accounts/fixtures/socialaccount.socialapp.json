@@ -1,0 +1,30 @@
+[
+{
+    "pk": 1, 
+    "model": "socialaccount.socialapp", 
+    "fields": {
+        "name": "LinkedIn", 
+        "sites": [
+            1
+        ], 
+        "secret": "CU9ueuXMmvhMPxDX", 
+        "client_id": "77pkwzayx3rllu", 
+        "key": "", 
+        "provider": "linkedin_oauth2"
+    }
+},
+{
+    "pk": 2, 
+    "model": "socialaccount.socialapp", 
+    "fields": {
+        "name": "Facebook", 
+        "sites": [
+            1
+        ], 
+        "secret": "c54fef2394fa4610b60f659ac211486a", 
+        "client_id": "654490144642460", 
+        "key": "", 
+        "provider": "facebook"
+    }
+}
+]

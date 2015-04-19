@@ -1,0 +1,39 @@
+[
+    {
+        "pk": 1,
+        "model": "companies.company",
+        "fields": {
+            "established": 2013,
+            "published_status": 1,
+            "contact": 1,
+            "creator": 1,
+            "image": "",
+            "video": "",
+            "google_plus": "https://www.google.com/+xeontekuk",
+            "workforce": 3,
+            "category": 1,
+            "training": true,
+            "location": 1,
+            "email": "enquiries@xeontek.com",
+            "sponsor": false,
+            "website": "http://www.xeontek.com/",
+            "industries": [
+                13
+            ],
+            "fax": "",
+            "description": "We are software professionals, consultants and developers engaged in the rapid and concise design and delivery of high-performance Web and Software Development including E-Commerce, Business Intelligence and Cloud Computing support and services for small to medium enterprises in the UK.\r\n\r\nWe are primarily a software consultancy and web development company based in London. We provide a comprehensive IT solution to any business with expertise in all areas of IT.",
+            "twitter": "https://twitter.com/xeontek",
+            "facebook": "https://www.facebook.com/xeontek",
+            "phone": "",
+            "linked_in": "http://www.linkedin.com/company/xeontek",
+            "youtube": "http://www.youtube.com/user/xeontek",
+            "expired": "2114-05-12T15:08:56.895Z",
+            "slug": "xeontek",
+            "name": "XeonTek",
+            "created": "2014-06-05T16:19:01.573Z",
+            "country": 234,
+            "modified": "2014-06-05T16:19:01.616Z",
+            "registration": "8454858"
+        }
+    }
+]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% load i18n %}
+</head>
+<body>
+    <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <table>
+        {{ wizard.management_form }}
+        {{ wizard.form }}
+    </table>
+    {% if wizard.steps.prev %}
+    <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">
+        {% trans "firt step" %}
+    </button>
+    <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">
+        {% trans "prev step" %}
+    </button>
+    {% endif %}
+    <input type="submit" value="{% trans "submit" %}"/>
+    </form>
+</body>
+</html>

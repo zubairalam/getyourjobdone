@@ -1,0 +1,28 @@
+{
+    "name": "JobPlus",
+    "version": "1.0.0",
+    "description": "Packages",
+    "author": "XeonTek Ltd",
+    "license": "Creative Commons (CC) License 3.0",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "packages",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "animate-css":"3.2.0",
+        "bootstrap": "3.2.0",
+        "fontawesome": "4.1.0",
+        "FitVids": "1.1.0",
+        "gmaps":"0.4.13",
+        "html5shiv":"3.7.2",
+        "jquery": "1.10.2",
+        "jquery.inview": "1.0.0",
+        "jquery.migrate": "1.2.1",
+        "jquery-placeholder": "2.0.8",
+        "respond": "1.4.2"
+    }
+}

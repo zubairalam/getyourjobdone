@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+{% include 'includes/meta.html' %}
+{% block head %}{% endblock %}
+{% include 'includes/fonts.html' %}
+{% include 'includes/stylesheets.html' %}
+{% block stylesheets %}{% endblock %}
+{% include "includes/icons.html" %}
+{% include "includes/compat.html" %}
+{% include "includes/google.html" %}
+</head>
+<body>
+{% include 'includes/header.html' %}
+{% block body %}{% endblock %}
+{% include 'includes/backtotop.html' %}
+<footer class="footer">
+    {% block extra_footer %} {% endblock %}
+    {% include 'includes/footer-bottom.html' %}
+</footer>
+{% include "includes/scripts.html" %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

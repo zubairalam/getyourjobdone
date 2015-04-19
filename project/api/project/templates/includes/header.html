@@ -1,0 +1,285 @@
+{% load i18n static %}
+
+<nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+    <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
+            <span class="sr-only">
+               {% trans 'Toggle Navigation' %}
+            </span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+    </button>
+    <a href="{% url 'core:home' %}" class="navbar-brand">
+        <img src="{% static 'images/logo.png' %}" alt="{% trans 'Find your dream job in Mauritius with JobPlus' %}"
+             height="35px" width="101px"/>
+    </a>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="dropdown mega-dropdown">
+<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+    {% trans 'Browse' %}
+    &nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span>
+</a>
+<ul class="dropdown-menu mega-dropdown-menu row">
+    <li class="col-sm-3">
+        <ul>
+            <li class="dropdown-header">
+                {% trans 'Jobs' %}
+            </li>
+            <li>
+                <a href="#">{% trans 'Permanent' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Freelance' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Internships' %}</a>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown-header">
+                {% trans 'Projects' %}
+            </li>
+            <li>
+                <a href="#">{% trans 'Ending Soon' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Available for Bidding' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Governmental' %}</a>
+            </li>
+        </ul>
+    </li>
+    <li class="col-sm-3">
+        <ul>
+            <li class="dropdown-header">
+                {% trans 'Events' %}
+            </li>
+            <li>
+                <a href="#">{% trans 'Upcoming' %}</a>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown-header">
+                {% trans 'Training' %}
+            </li>
+            <li>
+                <a href="#">{% trans 'Get Qualified' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Training Centres' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Skills' %}</a>
+            </li>
+        </ul>
+    </li>
+    <li class="col-sm-3">
+        <ul>
+            <li class="dropdown-header">
+                {% trans 'Featured Company' %}
+            </li>
+            <div id="myCarousel" data-ride="carousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href="#">
+                            <img src="http://placehold.it/254x150/ef5e55/f5f5f5/&amp;text=XeonTek+Ltd"
+                                 alt="{{ config.CONTACT_COMPANY_NAME }}" class="img-responsive"/>
+                        </a>
+                        <h4>
+                            <small>
+                                {% trans 'IT Consultancy' %}
+                            </small>
+                        </h4>
+                        <button type="button" class="btn btn-primary">
+                            {% trans 'Get in touch' %}
+                        </button>
+                        <button href="#" type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            {% trans 'Add to my Contact List' %}
+                        </button>
+                    </div>
+                    <div class="item active">
+                        <a href="#">
+                            <img src="http://placehold.it/254x150/ef5e55/f5f5f5/&amp;text=XeonTek+Ltd"
+                                 alt="{{ config.CONTACT_COMPANY_NAME }}" class="img-responsive"/>
+                        </a>
+                        <h4>
+                            <small>
+                                {% trans 'Web Consultancy' %}
+                            </small>
+                        </h4>
+                        <button type="button" class="btn btn-primary">
+                            {% trans 'Get in touch' %}
+                        </button>
+                        <button href="#" type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            {% trans 'Add to my Contact List' %}
+                        </button>
+                    </div>
+                    <div class="item active">
+                        <a href="#">
+                            <img src="http://placehold.it/254x150/ef5e55/f5f5f5/&amp;text=XeonTek+Ltd"
+                                 alt="{{ config.CONTACT_COMPANY_NAME }}" class="img-responsive"/>
+                        </a>
+                        <h4>
+                            <small>
+                                {% trans 'Next Consultancy' %}
+                            </small>
+                        </h4>
+                        <button type="button" class="btn btn-primary">
+                            {% trans 'Get in touch' %}
+                        </button>
+                        <button href="#" type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            {% trans 'Add to my Contact List' %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <li class="divider"></li>
+            <li>
+                <a href="#">
+                    {% trans 'View all Companies' %}
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="col-sm-3">
+        <ul>
+            <li class="dropdown-header">
+                {% trans 'Add to my Contact List' %}
+            </li>
+            <div id="myCarousel" data-ride="carousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href="#">
+                            <img src="http://placehold.it/254x150/3498db/f5f5f5/&amp;text=John+Doe"
+                                 alt="John Doe" class="img-responsive"/>
+                        </a>
+                        <h4>
+                            <small>
+                                {% trans 'Web Developer at Heart' %}
+                            </small>
+                        </h4>
+                        <button type="button" class="btn btn-primary">
+                            {% trans 'Get in touch' %}
+                        </button>
+                        <button href="#" type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            {% trans 'Add to my Contact List' %}
+                        </button>
+                    </div>
+                    <div class="item active">
+                        <a href="#">
+                            <img src="http://placehold.it/254x150/3498db/f5f5f5/&amp;text=Jane+Doe"
+                                 alt="Jane Doe" class="img-responsive"/>
+                        </a>
+                        <h4>
+                            <small>
+                                {% trans 'Web Designer at Heart' %}
+                            </small>
+                        </h4>
+                        <button type="button" class="btn btn-primary">
+                            {% trans 'Get in touch' %}
+                        </button>
+                        <button href="#" type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            {% trans 'Add to my Contact List' %}
+                        </button>
+                    </div>
+                    <div class="item active">
+                        <a href="#">
+                            <img src="http://placehold.it/254x150/3498db/f5f5f5/&amp;text=Mary+Doe"
+                                 alt="Mary Doe" class="img-responsive"/>
+                        </a>
+                        <h4>
+                            <small>
+                                {% trans 'System Admin at Heart' %}
+                            </small>
+                        </h4>
+                        <button type="button" class="btn btn-primary">
+                            {% trans 'Get in touch' %}
+                        </button>
+                        <button href="#" type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-heart"></span>
+                            {% trans 'Add to my Contact List' %}
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <li class="divider"></li>
+            <li>
+                <a href="#">
+                    {% trans 'View all People' %}
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+</li>
+</ul>
+<div class="col-sm-5 col-md-5">
+    <form role="search" class="navbar-form">
+        <div class="input-group">
+            <input type="text" placeholder="Search" name="q" class="form-control"/>
+
+            <div class="input-group-btn">
+                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<ul class="nav navbar-nav navbar-right">
+    {% if user.is_authenticated %}
+    <li>
+        <a href="#" data-toggle="tooltip" data-placement="bottom" data-original-title="{% trans 'Hire Staff' %}">
+            <i class="icon24 i-users-2"></i>
+        </a>
+    </li>
+    <li class="dropdown">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+            <img src="{% static user.get_picture %}" alt="#" height="25" width="25" data-toggle="tooltip" data-placement="bottom"
+            data-original-title="{{user.get_full_name}}"/>
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="{% url 'accounts:dashboard' %}">{% trans 'My Account' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Billing' %}</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="#">{% trans 'Help' %}</a>
+            </li>
+            <li>
+                <a href="#">{% trans 'Blog' %}</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="{% url 'accounts:logout' %}" id="fb_logout">{% trans 'Sign out' %}</a>
+            </li>
+        </ul>
+    </li>
+    {% else %}
+    <li><a href="{% url 'accounts:login' %}">
+        {% trans 'Sign in' %}
+    </a></li>
+    <li><a href="{% url 'accounts:registration' %}">
+        {% trans 'Sign up' %}
+    </a></li>
+    {% endif %}
+</ul>
+
+
+</div>
+</div>
+</nav>

@@ -1,0 +1,156 @@
+{% extends "base_home.html" %}
+{% load i18n %}
+
+{% block head %}
+<title>{% trans 'Welcome' %} | {{ site.name }}</title>
+<meta name="description" content="{% trans 'Why we love' %} {{ site.name}}"/>
+<meta name="robots" content="index, follow"/>
+<link rel="author" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+<link rel="publisher" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>
+                {% trans 'Latest Freelancers' %}
+            </h3>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-12 col-md-12 col-sx-12 col-sm-12">
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>John Doe</h3>
+
+                        <p>Skills: Javascript, HTML, CSS</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 300 per day' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact Him' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>Jane Watson</h3>
+
+                        <p>Skills: Python, Node.js, C#</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 700 per day' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact Him' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>Mary Archie</h3>
+
+                        <p>Skills: Actionscript, Flash</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 850 per day' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact Her' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>Tomas Hanks</h3>
+
+                        <p>Skills: MongoDB, SQL, Redis</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 550 per day' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact Him' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>
+                    {% trans 'Latest Jobs' %}
+                </h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>{% trans 'NodeJS App Developer' %}</h3>
+
+                        <p>Location: Port Louis</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 75,000 per month' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact Accenture' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>{% trans 'ASP.NET Developer' %}</h3>
+
+                        <p>Location: Rose Hill</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 25,000 - 40,000 per month' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact Microsoft' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>{% trans 'Java MVC Developer' %}</h3>
+
+                        <p>Location: Vacoas</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 48,500 per month' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact HP' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 hero-feature">
+                <div class="thumbnail"><img src="http://placehold.it/800x500" alt=""/>
+
+                    <div class="caption">
+                        <h3>{% trans 'Python Guru Required' %}</h3>
+
+                        <p>Location: Phoenix, ASAP</p>
+
+                        <p class="btn-stack">
+                            <label class="label label-success">{% trans 'Rs 30,000 per month' %}</label>
+                            <a href="#" class="btn btn-primary">{% trans 'Contact XeonTek' %}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

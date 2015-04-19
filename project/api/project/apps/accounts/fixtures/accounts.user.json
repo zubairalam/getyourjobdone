@@ -1,0 +1,20 @@
+[
+{
+    "pk": 1, 
+    "model": "accounts.user", 
+    "fields": {
+        "hash": "5833e2b8-10e7-11e4-bc68-080027880ca6", 
+        "created": "2014-07-21T14:57:33.125Z", 
+        "modified": "2014-07-21T14:57:33.246Z", 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2014-07-21T14:59:24.646Z", 
+        "groups": [], 
+        "active": true, 
+        "terms": true, 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$12000$mCfSknLkJSc0$/TvJZTZ23KNQdn4MGzpqqtkQDBq0gPu8NhLZ5FHBfVE=", 
+        "email": "developers@xeontek.com"
+    }
+}
+]

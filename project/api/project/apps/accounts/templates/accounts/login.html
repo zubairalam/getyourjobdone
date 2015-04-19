@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+{% load i18n widget_tweaks socialaccount %}
+
+{% block head %}
+<title>{% trans 'Sign in' %} | {{ site.name }}</title>
+<meta name="description" content="{% trans 'Sign in to your account' %}"/>
+<meta name="robots" content="index, follow"/>
+<link rel="author" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+<link rel="publisher" href="{{ config.SOCIAL_GOOGLE_URL }}"/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+     <div class="row breadcrumb-title">
+        <div class="breadcrumbs pull-left">
+            <ul class="breadcrumb">
+                {% trans 'You are here' %}:
+                <li>
+                    <a href="{% url 'core:home' %}">
+                        {% trans 'Home' %}
+                    </a>
+                    &nbsp;<i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">
+                    {% trans 'Sign in' %}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <p>{{verified}}</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sx-12 col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1>
+                        <i class="i-key"></i>
+                        {% trans 'Sign in' %}
+                    </h1>
+                </div>
+                <div class="panel-body">
+                    <div class="social-buttons">
+                        <h3>{% trans 'Connect with' %}</h3>
+
+                        <p class="center-align-text btn-stack">
+                            <a id="fb_login" href="{% provider_login_url 'facebook' process='login' %}" rel="nofollow" class="btn btn-info">
+                                <i class="i-facebook"></i>
+                                {% trans 'Facebook' %}
+                            </a>
+                            <a id="linkedin_btn" href="{% provider_login_url 'linkedin_oauth2' process='login' %}" rel="nofollow" class="btn btn-default">
+                                <i class="i-linkedin"></i>
+                                {% trans 'Linkedin' %}
+                            </a>
+
+                        <div id="loginbadge">
+                            <p>Login badge renders here if the current user is authorized.</p>
+                        </div>
+                        <label id="status"></label>
+                        </p>
+                        <hr/>
+                        <h3>{% trans 'or use existing' %}</h3>
+                    </div>
+                    <form action="{% url 'accounts:login' %}" method="post" role="form">
+                        {% csrf_token %}
+                        {% if form.non_field_errors %}
+                        {% for err in form.non_field_errors %}
+                        <div class="form-group">
+                            <div class="alert alert-danger">
+                                <button type="button" data-dismiss="alert" aria-hidden="true" data-original-title=""
+                                        title="" class="close">x
+                                </button>
+                                <strong>
+                                    <small><i class="i-fire"></i>{{ err }}</small>
+                                </strong>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+
+                        <div class="form-group">
+                            {% render_field form.email|attr:"required"|attr:"autofocus" class="form-control" placeholder="Email" %}
+                        </div>
+                        <div class="form-group">
+                            {% render_field form.password|attr:"required" class="form-control" placeholder="Password" %}
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember_me" type="checkbox"/>
+                                {% trans 'Remember me' %}?
+                            </label>
+                        </div>
+                        <button type="submit" data-original-title="" title="" class="btn btn-warning">
+                            {% trans 'Sign in' %}
+                        </button>
+                        <br/><br/>
+                        <a href="{% url 'accounts:reset_password' %}">{% trans 'Forgot Password' %}?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+
+<!--script(type='text/javascript')-->
+<!--    scope = "r_emailaddress&r_network&r_contactinfo&rw_groups&rw_nus&r_fullprofile";-->
+<!--    scope = escape(scope);-->
+<!--    authetication_url =-->
+<!--    "https://www.linkedin.om/uas/oauth2/authorization?response_type=code&client_id=77pkwzayx3rllu&scope="+scope+"&state={{state}}&redirect_uri=http://localhost:8000";-->
+<!--    console.log(authetication_url);-->
+<script type="text/javascript">
+  $(function() {
+    $.getScript("http://platform.linkedin.com/in.js?async=true", function success() {
+      IN.init({
+        api_key: "77pkwzayx3rllu",
+        authorize: "true",
+        credentials_cookie: "true",
+        onLoad: "onLinkedInLoad"
+      });
+    });
+  });
+
+</script>
+<script type="text/javascript">
+  //$("#linkedin_btn").on('click',function(){
+  //    IN.User.authorize(onLinkedInLoad);
+  //});
+
+  function onLinkedInLoad() {
+    IN.Event.on(IN, "auth", function() {onLinkedInLogin();});
+    IN.Event.on(IN, "logout", function() {onLinkedInLogout();});
+  }
+
+  function onLinkedInLogout() {
+    setLoginBadge(false);
+  }
+  res=null;
+  //function onLinkedInLogin() {
+  //  // we pass field selectors as a single parameter (array of strings)
+  //  IN.API.Profile("me")
+  //    .fields(["id", "firstName", "lastName", "pictureUrl", "publicProfileUrl"])
+  //    .result(function(result) {
+  //        res = result;
+  //      setLoginBadge(result.values[0]);
+  //    })
+  //    .error(function(err) {
+  //      alert(err);
+  //    });
+  //}
+
+  function linkedin_callback(response){
+      alert(response.message);
+  }
+
+  function onLinkedInLogin() {
+      //Dajaxice.accounts.linkedin_login(linkedin_callback);
+  }
+
+  p = null;
+
+  function setLoginBadge(profile) {
+    if (!profile) {
+      profHTML = "<p>You are not logged in</p>";
+    }
+    else {
+      p = profile;
+      var pictureUrl = profile.pictureUrl;
+      //var pictureUrl = profile.pictureUrl;
+      profHTML = "<p><a href=\"" + profile.publicProfileUrl + "\">";
+      profHTML = profHTML + "&nbsp; Welcome <a href=\"" + profile.publicProfileUrl + "\">";
+      //profHTML = profHTML + profile.firstName + " " + profile.lastName + "</a>! <a href=\"#\" onclick=\"IN.User.logout(); return false;\">logout</a></p>";
+      profHTML = profHTML + profile.firstName + " " + profile.lastName;
+    }
+    document.getElementById("loginbadge").innerHTML = profHTML;
+  }
+
+</script>
+<script type="text/javascript">
+  //This is called with the results from from FB.getLoginStatus().
+
+  function statusChangeCallback(response) {
+      console.log('statusChangeCallback');
+      console.log(response);
+      // The response object is returned with a status field that lets the
+      // app know the current login status of the person.
+      // Full docs on the response object can be found in the documentation
+      // for FB.getLoginStatus().
+      if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+          testAPI();
+      } else if (response.status === 'not_authorized') {
+          // The person is logged into Facebook, but not your app.
+          document.getElementById('status').innerHTML = 'Please log ' +
+              'into this app.';
+      } else {
+          // The person is not logged into Facebook, so we're not sure if
+          // they are logged into this app or not.
+          document.getElementById('status').innerHTML = 'Please log ' +
+              'into Facebook.';
+      }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+
+  function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+      });
+  }
+
+  window.fbAsyncInit = function() {
+      FB.init({
+          appId      : '654490144642460',
+          cookie     : true,  // enable cookies to allow the server to access
+          // the session
+          xfbml      : true,  // parse social plugins on this page
+          version    : 'v2.0' // use version 2.0
+      });
+
+      // Now that we've initialized the JavaScript SDK, we call
+      // FB.getLoginStatus().  This function gets the state of the
+      // person visiting this page and can return one of three states to
+      // the callback you provide.  They can be:
+      //
+      // 1. Logged into your app ('connected')
+      // 2. Logged into Facebook, but not your app ('not_authorized')
+      // 3. Not logged into Facebook and can't tell if they are logged into
+      //    your app or not.
+      //
+      // These three cases are handled in the callback function.
+
+      FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+      });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'http://connect.facebook.net/en_GB/sdk.js';
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me?fields=location', function(response) {
+          console.log('Successful login for: ' + response.name);
+          document.getElementById('status').innerHTML =
+              'Thanks for logging in, ' + response.name + '!';
+      });
+  };
+
+  function fb_login(){
+      testAPI();
+  };
+
+  /*
+      signal django view that a user has been logged in successfully
+  */
+  function js_callback(data){
+      if(data.message.indexOf("failed")>=0){
+          alert("Sorry, You can't be logged in..Please try again later.");
+      }else if(data.message.indexOf("invalid")>=0){
+          // rarely this will happen
+          alert("Please Enter a valid email address");
+      }else{
+          window.location.href=window.location.origin+data.message;
+          console.log(window.location.origin+data.message);
+      }
+  }
+
+  //fb_btn = document.getElementById('fb_login');
+
+  //fb_btn.addEventListener('click',function(){
+  //    FB.login(function(response) {
+  //        if (response.authResponse) {
+  //            console.log('Welcome!  Fetching your information.... ');
+  //            FB.api('/me', function(response) {
+  //                console.log('Good to see you, ' + response.name + '.');
+  //                console.log(response);
+  //            });
+
+  //            p={'oauth_token':response.authResponse.accessToken};
+
+  //            console.log(p);
+
+  //            Dajaxice.accounts.validate_facebook_user(js_callback, {'token':JSON.stringify(p)});
+
+  //        } else {
+  //            console.log('User cancelled login or did not fully authorize.');
+  //        }
+  //        },{scope: 'public_profile,email,user_friends,user_location,user_education_history,user_work_history,user_activities',
+  //            return_scopes: true});
+  //});
+
+  //fb_signout = document.getElementById('fb_logout');
+  //if(fb_signout!=null && fb_signout.length!==0){
+  //    fb_signout.addEventListener('click',function(){
+  //        FB.logout();
+  //    });
+  //};
+
+</script>
+{% endblock %}
