@@ -13,16 +13,10 @@ var patterns = require('./routes/patterns');
 
 var app = express();
 
-
 app.engine('html', swig.renderFile);
-
 app.set('view engine', 'html');
 app.set('view cache', false);
 swig.setDefaults({ cache: false });
-// app.set('view engine', 'jade');
-
-
-
 app.set('views', path.join(__dirname, '/public/views'));
 
 
