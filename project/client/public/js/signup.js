@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('mainApp', ['ui.bootstrap', 'ngMessages', 'ngCookies']);
 
-    var RegistrationController = function ($scope, $http, $window,$cookieStore) {
+    var RegistrationController = function ($scope, $http, $window, $cookieStore) {
         var model = this;
 
         model.user = {

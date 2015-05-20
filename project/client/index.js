@@ -6,10 +6,9 @@ var express = require('express'),
     swig = require('swig'),
     path = require('path'),
     stylus = require('stylus'),
-    urls = require('urls');
+    database = require('./config/database');
 
 var router = require('./routes');
-var patterns = require('./routes/patterns');
 
 var app = express();
 
@@ -35,8 +34,6 @@ app.use('/', router);
 
 app.disable('x-powered-by');
 
-
-urls(patterns.urls, app);
 
 http.createServer(app).listen(
     app.get('port'),

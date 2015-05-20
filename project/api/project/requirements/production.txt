@@ -1,7 +1,0 @@
-# Production python packages only
--r base.txt
-
-# python related
-gunicorn==19.1.1
-
-# django related

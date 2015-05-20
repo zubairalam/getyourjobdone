@@ -1,3 +1,0 @@
-#!/bin/sh
-. /home/vagrant/.virtualenvs/project/bin/activate
-/home/vagrant/.virtualenvs/project/bin/python manage.py reset_data

@@ -63,8 +63,8 @@ module.exports = function (grunt) {
                     cwd: __dirname,
                     ignore: ['node_modules/**'],
                     ext: 'js,coffee',
-                    watch: ['server'],
-                    delay: 1000,
+                    watch: ['controllers', 'helpers', 'routes', 'config'],
+                    delay: 100,
                     legacyWatch: true
                 }
             }

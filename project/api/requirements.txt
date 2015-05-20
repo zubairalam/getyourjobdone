@@ -1,3 +1,0 @@
-# File put here deliberately for PaaS services.
-
--r project/requirements/local.txt

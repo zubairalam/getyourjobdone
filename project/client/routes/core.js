@@ -7,5 +7,8 @@ module.exports = (function () {
     router.route('/')
         .get(core.homeController);
 
+    router.route('/comments')
+        .get(core.CommentsController);
+
     return router;
 })();

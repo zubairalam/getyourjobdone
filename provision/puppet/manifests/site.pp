@@ -45,13 +45,13 @@ node "firethoughts" {
   include core
   include system
   include postgresql
-  include python
+  # include python
   include elasticsearch
   include redis
   include nginx
   include mongo
   include nodejs
-  include project
+  # include project
 }
 
 
